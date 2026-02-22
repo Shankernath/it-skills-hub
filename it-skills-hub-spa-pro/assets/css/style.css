@@ -1,0 +1,314 @@
+/* Professional Design System for IT Skills Hub */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap');
+
+:root {
+  --primary: #004ea1;
+  /* Deep Blue from Logo */
+  --secondary: #007bff;
+  --accent: #f47920;
+  /* Vibrant Orange from Logo */
+  --dark: #1a1a1a;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Navbar Tuning */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: var(--dark) !important;
+  font-weight: 600;
+  padding: 10px 20px !important;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--secondary) !important;
+}
+
+/* Sections */
+.section-padding {
+  padding: 100px 0;
+}
+
+.bg-soft {
+  background-color: #f0f4f8;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 78, 161, 0.85) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero {
+  border-bottom: 5px solid var(--accent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Course Cards */
+.course-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+  border-top: 5px solid var(--primary);
+  border-bottom: 2px solid transparent;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-bottom-color: var(--accent);
+}
+
+.course-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--light);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 20px;
+  transition: var(--transition);
+}
+
+.course-card:hover .course-icon {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.course-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 80px 0 20px;
+  border-top: 6px solid var(--accent);
+}
+
+footer h5 {
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+footer li {
+  margin-bottom: 12px;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+footer a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 50px;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Custom Buttons */
+.btn-primary-custom {
+  background: var(--accent);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-primary-custom:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+/* Brand Utilities */
+.text-brand-orange {
+  color: var(--accent) !important;
+}
+
+.bg-brand-orange {
+  background-color: var(--accent) !important;
+}
+
+.text-brand-blue {
+  color: var(--primary) !important;
+}
+
+.bg-brand-blue {
+  background-color: var(--primary) !important;
+}
+
+/* Gallery Section */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 78, 161, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay i {
+  color: white;
+  font-size: 2rem;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
