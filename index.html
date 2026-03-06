@@ -112,25 +112,31 @@
 
       <div class="row g-4">
         <div class="col-lg-6">
-          <div class="about-card p-4">
-            <div class="icon-box blue">
-              <i class="fas fa-bullseye"></i>
+          <div class="about-card">
+            <img src="assets/images/gallery/career counselling 2.png" class="about-card-img" alt="Our Mission">
+            <div class="p-4">
+              <div class="icon-box blue">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3 class="h4 mb-3">Our Mission</h3>
+              <p class="text-muted">To deliver high-quality, hands-on computer and I.T education that is practical,
+                affordable, and aligned with industry-recognized standards, enabling students to build real-world skills
+                and achieve long-term personal and professional success.</p>
             </div>
-            <h3 class="h4 mb-3">Our Mission</h3>
-            <p class="text-muted">To deliver high-quality, hands-on computer and I.T education that is practical,
-              affordable, and aligned with industry-recognized standards, enabling students to build real-world skills
-              and achieve long-term personal and professional success.</p>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="about-card p-4">
-            <div class="icon-box">
-              <i class="fas fa-eye"></i>
+          <div class="about-card">
+            <img src="assets/images/gallery/center innovations.jpeg" class="about-card-img" alt="Our Vision">
+            <div class="p-4">
+              <div class="icon-box">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3 class="h4 mb-3">Our Vision</h3>
+              <p class="text-muted">To become a leading computer education center, empowering individuals with modern
+                digital skills that transform careers, strengthen communities, and drive local and regional innovation.
+              </p>
             </div>
-            <h3 class="h4 mb-3">Our Vision</h3>
-            <p class="text-muted">To become a leading computer education center, empowering individuals with modern
-              digital skills that transform careers, strengthen communities, and drive local and regional innovation.
-            </p>
           </div>
         </div>
       </div>
@@ -254,7 +260,8 @@
   <section id="gallery" class="section-padding bg-light reveal">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="display-5 mb-3">Life at IT Skills Hub</h2>
+        <h2 class="display-5 mb-3">Life at <span class="text-brand-blue">IT SKILLS HUB</span> <span
+            class="text-brand-orange">UMERKOT</span></h2>
         <div class="mx-auto" style="width: 80px; height: 4px; background: var(--accent);"></div>
         <p class="mt-3 text-muted">A dynamic glimpse into our modern learning environment and student activities.</p>
       </div>
@@ -375,7 +382,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <h2>Why Choose I.T Skills Hub?</h2>
+          <h2>Why Choose <span class="text-brand-blue">I.T SKILLS HUB</span>?</h2>
           <p class="lead mb-4">Trusted & Recognized</p>
           <p class="mb-4">We are the most trusted computer training centre in Umerkot, Sindh, officially registered with
             STEVTA and affiliated with Trade Testing Board Sindh.</p>
@@ -446,29 +453,34 @@
           </div>
         </div>
         <div class="col-lg-7">
-          <form class="bg-light p-4 rounded-4 shadow-sm">
+          <form id="contactForm" class="bg-light p-4 rounded-4 shadow-sm">
             <div class="row g-3">
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" maxlength="30"
+                  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
               </div>
               <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Your Email" required>
+                <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" maxlength="11"
+                  pattern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
               </div>
               <div class="col-12">
-                <select class="form-select">
-                  <option selected disabled>Select Course of Interest</option>
+                <select name="course" class="form-select" required>
+                  <option selected disabled value="">Select Course of Interest</option>
                   <option>DIT</option>
                   <option>CIT</option>
                   <option>Web Development</option>
                   <option>Graphics Designing</option>
+                  <option>YouTube Automation</option>
                   <option>Other</option>
                 </select>
               </div>
               <div class="col-12">
-                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                <textarea name="message" class="form-control" rows="4" placeholder="Your Message" maxlength="250"
+                  required></textarea>
               </div>
               <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
+                <button type="submit" id="submitBtn" class="btn btn-primary-custom w-100">Send Message</button>
+                <div id="formStatus" class="mt-3 d-none"></div>
               </div>
             </div>
           </form>
@@ -628,6 +640,62 @@
           bsCollapse.hide();
         }
       });
+    });
+
+    // Contact Form Handler for Google Apps Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzDLX4_chbdNIwMYIgeOLoQjkHxNkZw2iCULHN7Iq40wa2CDUpzGlxMEHaCLOTQC3JS/exec'; // Replace after deployment
+    const form = document.querySelector('#contactForm');
+    const btn = document.querySelector('#submitBtn');
+    const status = document.querySelector('#formStatus');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      status.classList.add('d-none');
+
+      const formData = new FormData(form);
+      const name = formData.get('name');
+      const phone = formData.get('phone');
+      const course = formData.get('course');
+      const message = formData.get('message');
+
+      // Validation Logic
+      let errorMsg = "";
+      if (name.length < 3) errorMsg = "Name must be at least 3 characters long and contain only letters.";
+      else if (!/^03\d{9}$/.test(phone)) errorMsg = "Please enter a valid 11-digit mobile number starting with 03.";
+      else if (!course) errorMsg = "Please select a course.";
+      else if (message.length < 10) errorMsg = "Message must be at least 10 characters long.";
+
+      if (errorMsg) {
+        status.innerHTML = `<div class="alert alert-warning">${errorMsg}</div>`;
+        status.classList.remove('d-none');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+
+      // Simplified and much more reliable GET method
+      const finalURL = scriptURL + "?" + new URLSearchParams(formData).toString();
+
+      fetch(finalURL, {
+        method: 'GET',
+        mode: 'no-cors'
+      })
+        .then(() => {
+          status.innerHTML = '<div class="alert alert-success">Message sent successfully! We will contact you soon.</div>';
+          status.classList.remove('d-none');
+          form.reset();
+          btn.disabled = false;
+          btn.innerHTML = 'Send Message';
+          setTimeout(() => status.classList.add('d-none'), 5000);
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          status.innerHTML = '<div class="alert alert-danger">Sorry, we are unable to send your message right now. Please try again later or contact us directly at 0349-0304228.</div>';
+          status.classList.remove('d-none');
+          btn.disabled = false;
+          btn.innerHTML = 'Send Message';
+        });
     });
   </script>
 
