@@ -377,15 +377,15 @@ footer a:hover {
 
 .footer-credentials {
   border-left: 3px solid var(--accent);
-  padding-left: 15px;
-  margin-bottom: 20px;
+  padding-left: 7px;
+  margin-bottom: 21px;
 }
 
 .footer-credentials p {
   margin-bottom: 4px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 0.85rem !important;
+  font-size: 0.80rem !important;
 }
 
 /* Custom Buttons */
