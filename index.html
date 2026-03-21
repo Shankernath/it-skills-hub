@@ -434,10 +434,13 @@
 <!-- Image Lightbox Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content bg-transparent border-0">
-            <div class="modal-body p-0 position-relative">
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content bg-transparent border-0" style="width: fit-content;">
+            <div class="modal-header border-0 position-absolute top-0 end-0 z-3 p-3">
+                <button type="button" class="btn-close btn-close-white shadow-lg"
+                        data-bs-dismiss="modal" aria-label="Close"
+                        style="background-color: rgba(0,0,0,0.5); padding: 0.75rem; border-radius: 50%; opacity: 1;"></button>
+            </div>
+            <div class="modal-body p-0">
                 <img src="" id="modalImage" class="w-100 rounded-3" alt="Gallery Image">
             </div>
         </div>
