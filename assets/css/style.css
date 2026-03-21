@@ -76,13 +76,10 @@ h6 {
 }
 
 .reg-text {
-  font-size: 0.68rem;
+  font-size: 0.60rem;
   font-weight: 600;
-  color: var(--gray);
   letter-spacing: 0.2px;
   text-transform: uppercase;
-  border-left: 2px solid var(--accent);
-  padding-left: 8px;
   line-height: 1;
 }
 
