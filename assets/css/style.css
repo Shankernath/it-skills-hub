@@ -333,7 +333,7 @@ h6 {
 footer {
   background: var(--primary);
   color: var(--white);
-  padding: 80px 0 20px;
+  padding: 40px 0 20px;
   border-top: 6px solid var(--accent);
 }
 
@@ -726,3 +726,4 @@ footer a:hover {
 .announcement-banner:hover .marquee-text {
     animation-play-state: paused;
 }
+
