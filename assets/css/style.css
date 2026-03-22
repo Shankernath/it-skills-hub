@@ -666,19 +666,6 @@ footer a:hover {
   background: linear-gradient(to bottom, transparent, rgba(0, 78, 161, 0.2));
 }
 
-.icon-box {
-  width: 60px;
-  height: 60px;
-  background: rgba(244, 121, 32, 0.1);
-  color: var(--accent);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
 .icon-box.blue {
   background: rgba(0, 78, 161, 0.1);
   color: var(--primary);
@@ -735,19 +722,10 @@ footer a:hover {
     margin: 0 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     animation: pulse 1.5s ease-in-out infinite;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
-.icon {
-    display: inline-block;
-    margin: 0 6px;
-    font-size: 18px;
-    vertical-align: middle;
-}
 
-.shake-icon {
-    animation: shake 2s ease-in-out infinite;
-}
 
 @keyframes marquee {
     0% {
@@ -776,17 +754,6 @@ footer a:hover {
     }
 }
 
-@keyframes shake {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-10deg);
-    }
-    75% {
-        transform: rotate(10deg);
-    }
-}
 
 .announcement-banner:hover .marquee-text {
     animation-play-state: paused;
