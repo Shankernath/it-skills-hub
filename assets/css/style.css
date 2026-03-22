@@ -102,7 +102,7 @@ h6 {
 
 /* Sections */
 .section-padding {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 
 @media (max-width: 768px) {
@@ -712,7 +712,7 @@ footer a:hover {
 }
 
 .discount-badge {
-    background: #dc2626;
+    background: #004ea1;
     color: #ffffff;
     padding: 2px 12px;
     border-radius: 6px;
