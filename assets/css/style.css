@@ -1,6 +1,10 @@
 /* Professional Design System for IT Skills Hub */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap');
 
+/* ============================================================
+   RESPONSIVE BASE — Mobile-first, covers xs / sm / md / lg
+   ============================================================ */
+
 :root {
   --primary: #004ea1;
   /* Deep Blue from Logo */
@@ -102,13 +106,7 @@ h6 {
 
 /* Sections */
 .section-padding {
-  padding: 50px 0;
-}
-
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 60px 0;
-  }
+  padding: 80px 0;
 }
 
 .bg-soft {
@@ -165,13 +163,7 @@ h6 {
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 80vh;
-    padding: 100px 0;
-  }
-}
+/* Hero responsive handled in comprehensive block below */
 
 .hero p {
   font-size: 1.25rem;
@@ -561,12 +553,7 @@ footer a:hover {
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-}
+/* Hero h1 responsive — handled in comprehensive block */
 
 /* Map Section Styles */
 .map-container {
@@ -579,11 +566,7 @@ footer a:hover {
   transform: translateY(-5px);
 }
 
-@media (max-width: 768px) {
-  .map-container iframe {
-    height: 300px;
-  }
-}
+/* Map iframe responsive — handled in comprehensive block */
 
 /* Floating Action Button */
 .fab-container {
@@ -678,6 +661,20 @@ footer a:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, transparent, rgba(0, 78, 161, 0.2));
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  transition: var(--transition);
+  background: rgba(108, 117, 125, 0.1);
+  color: var(--gray);
 }
 
 .icon-box.blue {
@@ -875,4 +872,413 @@ footer a:hover {
   .gallery-card-body h6 {
     font-size: 0.95rem;
   }
+}
+
+/* ============================================================
+   COMPREHENSIVE RESPONSIVE DESIGN — ALL BREAKPOINTS
+   ============================================================ */
+
+/* --- Navbar --- */
+@media (max-width: 991px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-link {
+    padding: 8px 12px !important;
+  }
+
+  /* Collapse menu: center align items on mobile */
+  .navbar-nav {
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Join Now button in collapsed menu */
+  .btn-primary-custom.ms-lg-3 {
+    margin: 10px auto !important;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    height: 38px !important;
+  }
+
+  .reg-text {
+    font-size: 0.52rem;
+    letter-spacing: 0;
+  }
+
+  .reg-status {
+    gap: 4px;
+  }
+}
+
+/* --- Announcement Banner --- */
+@media (max-width: 768px) {
+  .marquee-text {
+    font-size: 12px;
+    padding-left: 100%;
+  }
+
+  .announcement-banner {
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .marquee-text {
+    font-size: 11px;
+  }
+
+  .discount-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+}
+
+/* --- Hero Section --- */
+@media (max-width: 991px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 80vh;
+    padding: 110px 0 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .hero .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 12px !important;
+    align-items: center;
+  }
+
+  .hero .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero h6 {
+    font-size: 0.7rem;
+    letter-spacing: 1px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero {
+    min-height: 85vh;
+    padding: 100px 15px 50px;
+  }
+}
+
+/* --- About Section --- */
+@media (max-width: 991px) {
+  .about-image-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .about-image-wrapper .position-absolute {
+    padding: 1rem !important;
+  }
+
+  .about-image-wrapper h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    margin-bottom: 1rem;
+  }
+
+  .icon-box,
+  .icon-box.blue {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-list li {
+    font-size: 0.88rem;
+  }
+}
+
+/* --- Section Headings --- */
+@media (max-width: 768px) {
+  .display-5 {
+    font-size: 1.8rem !important;
+  }
+
+  .display-6 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-5 {
+    font-size: 1.5rem !important;
+  }
+
+  .display-6 {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* --- Course Cards --- */
+@media (max-width: 576px) {
+  .course-card {
+    padding: 22px 16px;
+  }
+
+  .course-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+
+  .course-card h4 {
+    font-size: 1.05rem;
+  }
+}
+
+/* --- Gallery Section --- */
+/* Touch devices: always show overlay (no :hover on touch) */
+@media (hover: none) {
+  .gallery-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .zoom-btn {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-card {
+    border-radius: 10px;
+  }
+}
+
+/* --- Why Us Section --- */
+@media (max-width: 991px) {
+  #why-us .col-lg-6:last-child {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #why-us h2 {
+    font-size: 1.5rem;
+  }
+
+  #why-us .d-flex.mb-4 .me-3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* --- Contact Section --- */
+@media (max-width: 991px) {
+  #contact .col-lg-5 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #contactForm {
+    padding: 1.25rem !important;
+  }
+
+  #contact .card {
+    padding: 1.25rem !important;
+  }
+
+  .social-links {
+    margin-top: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #contact h2 {
+    font-size: 1.6rem;
+  }
+
+  #contactForm .row .col-md-6 {
+    width: 100%;
+  }
+}
+
+/* --- Location / Map --- */
+@media (max-width: 768px) {
+  .map-container iframe {
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .map-container iframe {
+    height: 220px;
+  }
+
+  .map-container {
+    border-radius: 12px !important;
+    border-width: 3px !important;
+  }
+}
+
+/* --- Footer --- */
+@media (max-width: 991px) {
+  footer .col-lg-3,
+  footer .col-lg-2 {
+    text-align: center;
+  }
+
+  footer .d-flex {
+    justify-content: center;
+  }
+
+  .footer-credentials {
+    border-left: none;
+    border-top: 3px solid var(--accent);
+    padding-left: 0;
+    padding-top: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 0 15px;
+  }
+
+  footer h5 {
+    margin-bottom: 1rem !important;
+    font-size: 1rem;
+  }
+
+  footer li {
+    margin-bottom: 8px;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    padding-top: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  footer .col-md-6 {
+    text-align: center;
+  }
+
+  footer .d-flex.align-items-center.mb-4 {
+    justify-content: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+}
+
+/* --- Section Padding Adjustments --- */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  /* Reduce row gutters on very small screens */
+  .row.g-5 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  .row.g-4 {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 0.75rem;
+  }
+}
+
+/* --- FAB Buttons --- */
+@media (max-width: 576px) {
+  .fab-container {
+    bottom: 15px;
+    right: 12px;
+    gap: 10px;
+  }
+
+  .fab-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Utility: prevent horizontal overflow on all screens --- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Only apply fluid resizing to content images, NOT to logo/icon images with explicit height attributes */
+img.img-fluid,
+.about-image-wrapper img,
+.gallery-img,
+.rounded-4 img,
+section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Protect explicitly-sized images (navbar logo, footer logo) */
+.navbar-brand img,
+footer img {
+  flex-shrink: 0;
 }
