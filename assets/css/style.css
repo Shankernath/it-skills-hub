@@ -163,7 +163,34 @@ h6 {
   text-transform: uppercase;
 }
 
-/* Hero responsive handled in comprehensive block below */
+/* Hero tagline — responsive letter-spacing (was inline style, can't be overridden by media queries) */
+.hero-tagline {
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .hero-tagline {
+    letter-spacing: 0.8px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-tagline {
+    letter-spacing: 0px;
+    font-size: 0.6rem;
+    /* Allow text to wrap naturally across 2 lines instead of overflowing */
+    white-space: normal;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-tagline {
+    font-size: 0.55rem;
+  }
+}
 
 .hero p {
   font-size: 1.25rem;
@@ -704,8 +731,8 @@ footer a:hover {
   background-size: 200% 100%;
   animation: gradientShift 3s ease infinite;
   color: #ffffff;
-  overflow: hidden;
-  white-space: nowrap;
+  overflow: hidden;        /* clips the marquee — prevents horizontal scrollbar */
+  white-space: nowrap;     /* required: keeps marquee text on one line so it scrolls */
   font-weight: bold;
   position: relative;
   border-top: 2px solid #ff9f5a;
@@ -911,16 +938,30 @@ footer a:hover {
 
 @media (max-width: 576px) {
   .navbar-brand img {
-    height: 38px !important;
+    height: 34px !important;
+  }
+
+  .navbar-brand {
+    max-width: calc(100vw - 70px);
+    overflow: hidden;
+  }
+
+  .navbar-brand .lh-1 {
+    font-size: 0.85rem;
   }
 
   .reg-text {
-    font-size: 0.52rem;
+    font-size: 0.48rem;
     letter-spacing: 0;
+    white-space: nowrap;
   }
 
   .reg-status {
-    gap: 4px;
+    gap: 3px;
+  }
+
+  .reg-icon {
+    font-size: 0.65rem;
   }
 }
 
@@ -994,12 +1035,31 @@ footer a:hover {
 
 @media (max-width: 576px) {
   .hero h1 {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 
   .hero {
-    min-height: 85vh;
-    padding: 100px 15px 50px;
+    min-height: 100svh;
+    padding: 120px 15px 50px;
+  }
+
+  .hero p {
+    font-size: 0.92rem;
+  }
+
+  .hero h6 {
+    font-size: 0.62rem;
+  }
+}
+
+/* Extra small – very narrow Samsung phones (360px and below) */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero {
+    padding: 120px 12px 40px;
   }
 }
 
@@ -1097,6 +1157,17 @@ footer a:hover {
 @media (max-width: 576px) {
   .gallery-card {
     border-radius: 10px;
+  }
+
+  /* Tighten gallery grid gutters on mobile so 2-column view doesn't feel cramped */
+  #gallery .row.g-4 {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
+  }
+
+  /* Remove gallery card body text on very small screens to save space */
+  .gallery-card-body {
+    padding: 0.5rem;
   }
 }
 
@@ -1231,18 +1302,38 @@ footer a:hover {
 
 @media (max-width: 576px) {
   .section-padding {
-    padding: 40px 0;
+    padding: 35px 0;
   }
 
   /* Reduce row gutters on very small screens */
   .row.g-5 {
-    --bs-gutter-x: 1rem;
-    --bs-gutter-y: 1rem;
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 0.75rem;
   }
 
   .row.g-4 {
-    --bs-gutter-x: 0.75rem;
-    --bs-gutter-y: 0.75rem;
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
+  }
+
+  /* Course cards: slightly tighter padding & smaller text on xs phones */
+  .course-card {
+    padding: 16px 12px;
+  }
+
+  .course-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .course-card p {
+    font-size: 0.8rem;
+  }
+
+  .course-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
   }
 }
 
