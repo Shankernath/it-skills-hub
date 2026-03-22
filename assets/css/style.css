@@ -725,8 +725,6 @@ footer a:hover {
     vertical-align: top;
 }
 
-
-
 @keyframes marquee {
     0% {
         transform: translate(0, 0);
