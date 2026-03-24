@@ -510,6 +510,10 @@
                 </div>
                 <div class="col-lg-7">
                     <form id="contactForm" class="bg-light p-4 rounded-4 shadow-sm">
+                        <!-- Honeypot Field for Spam Protection -->
+                        <div style="display:none;" aria-hidden="true">
+                            <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" name="name" class="form-control" placeholder="Your Name"
@@ -726,7 +730,7 @@
         });
 
         // Contact Form Handler for Google Apps Script
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzDLX4_chbdNIwMYIgeOLoQjkHxNkZw2iCULHN7Iq40wa2CDUpzGlxMEHaCLOTQC3JS/exec'; // Replace after deployment
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxGFcy9izYp4SEN1R48aQ69Ngdh_OGOMyncjaHPfUzwLA1NHslVvfURc7otU3pqEFnV/exec'; // Replace after deployment
         const form = document.querySelector('#contactForm');
         const btn = document.querySelector('#submitBtn');
         const status = document.querySelector('#formStatus');
@@ -735,7 +739,23 @@
             e.preventDefault();
             status.classList.add('d-none');
 
+            // Protection: Cooldown check (60 seconds)
+            const lastSubmit = localStorage.getItem('last_contact_submit');
+            const now = Date.now();
+            if (lastSubmit && (now - lastSubmit < 60000)) {
+                const wait = Math.ceil((60000 - (now - lastSubmit)) / 1000);
+                status.innerHTML = `<div class="alert alert-warning">Please wait ${wait} seconds before submitting again.</div>`;
+                status.classList.remove('d-none');
+                return;
+            }
+
             const formData = new FormData(form);
+
+            // Protection: Honeypot check
+            if (formData.get('website_url')) {
+                console.log("Spam detected");
+                return;
+            }
             const name = formData.get('name');
             const phone = formData.get('phone');
             const course = formData.get('course');
@@ -768,6 +788,8 @@
                     status.innerHTML = '<div class="alert alert-success">Message sent successfully! We will contact you soon.</div>';
                     status.classList.remove('d-none');
                     form.reset();
+                    // Set cooldown in local storage
+                    localStorage.setItem('last_contact_submit', Date.now());
                     btn.disabled = false;
                     btn.innerHTML = 'Send Message';
                     setTimeout(() => status.classList.add('d-none'), 5000);
