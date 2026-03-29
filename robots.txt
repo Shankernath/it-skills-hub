@@ -1,4 +1,15 @@
 User-agent: *
-Disallow:
+Allow: /
+Content-Signal: search=yes,ai-train=no
+
+# Specific AI Block (Optional - keep these if you don't want AI training)
+User-agent: GPTBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+
+# Ensure Googlebot can see your images for the favicon
+User-agent: Googlebot-Image
+Allow: /assets/images/
 
 Sitemap: https://www.itskillshub.com.pk/sitemap.xml
