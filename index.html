@@ -85,9 +85,12 @@
             <div class="row g-5 align-items-center mb-5">
                 <div class="col-lg-6">
                     <div class="about-image-wrapper mb-4 mb-lg-0">
-                        <img src="assets/images/gallery/center innovations.jpeg" class="img-fluid" alt="Who We Are">
+                        <video class="img-fluid w-100 d-block" src="assets/images/AdmissionsVideo.mp4" preload="metadata" controls playsinline></video>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
                         <div class="position-absolute bottom-0 start-0 p-4 w-100 text-white"
-                            style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                            style="background: linear-gradient(transparent, rgba(0,0,0,0.8)); transition: opacity 0.3s ease; pointer-events: none;">
                             <h4 class="mb-0">IT SKILLS HUB <span class="text-brand-orange">UMERKOT</span></h4>
                             <p class="small mb-0">Registered Technical Institute (Govt. of Sindh)</p>
                         </div>
@@ -828,6 +831,28 @@
                     imageModal.show();
                 });
             });
+
+            // Video overlay fade handler
+            const video = document.querySelector('.about-image-wrapper video');
+            const overlay = document.querySelector('.about-image-wrapper .position-absolute');
+            const playBtn = document.querySelector('.video-play-btn');
+            if (video && overlay && playBtn) {
+                video.addEventListener('play', () => {
+                    overlay.style.opacity = '0';
+                    playBtn.style.opacity = '0';
+                    playBtn.style.visibility = 'hidden';
+                });
+                video.addEventListener('pause', () => {
+                    overlay.style.opacity = '1';
+                    playBtn.style.opacity = '1';
+                    playBtn.style.visibility = 'visible';
+                });
+                video.addEventListener('ended', () => {
+                    overlay.style.opacity = '1';
+                    playBtn.style.opacity = '1';
+                    playBtn.style.visibility = 'visible';
+                });
+            }
         });
     </script>
     <!-- Floating Action Buttons -->
