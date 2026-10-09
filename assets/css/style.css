@@ -96,7 +96,7 @@ h6 {
 .nav-link {
   color: var(--dark) !important;
   font-weight: 600;
-  padding: 10px 20px !important;
+  padding: 10px 14px !important;
   transition: var(--transition);
 }
 
@@ -429,6 +429,7 @@ footer a:hover {
   border-radius: 50px;
   font-weight: 600;
   border: none;
+  white-space: nowrap;
   transition: var(--transition);
 }
 
@@ -1404,4 +1405,14 @@ section img {
 .navbar-brand img,
 footer img {
   flex-shrink: 0;
+}
+
+.scholarship-band {
+  background: linear-gradient(135deg, #004ea1, #0a6ad4);
+  color: #ffffff;
+}
+
+.scholarship-band p {
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0;
 }
