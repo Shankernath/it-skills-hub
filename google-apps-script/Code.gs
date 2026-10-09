@@ -378,18 +378,9 @@ function courses_(value) {
     'One Year Advance Course': true,
     'Office Automation': true
   };
-  var parts = String(value || '').split(',');
-  var chosen = [];
-  var seen = {};
-  for (var i = 0; i < parts.length; i++) {
-    var course = parts[i].replace(/[\u0000-\u001F]/g, '').trim();
-    if (!course) continue;
-    if (!allowed[course] || seen[course]) return '';
-    seen[course] = true;
-    chosen.push(course);
-  }
-  if (!chosen.length || chosen.length > 3) return '';
-  return chosen.join(', ');
+  var course = String(value || '').replace(/[\u0000-\u001F]/g, '').trim();
+  if (!course || course.indexOf(',') !== -1 || !allowed[course]) return '';
+  return course;
 }
 
 function date_(value) {

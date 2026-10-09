@@ -147,8 +147,8 @@ function stepError(step) {
     return message;
   }
 
-  if (step === 3 && selectedCourses().length === 0) {
-    return 'Select at least one scholarship course.';
+  if (step === 3 && selectedCourses().length !== 1) {
+    return 'Select one scholarship course.';
   }
 
   if (step === 4) {
