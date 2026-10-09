@@ -90,7 +90,9 @@ function doPost(e) {
 
     step = 'sheet';
     var sheet = scholarshipSheet_();
-    var status = cnicExists_(sheet, checked.cnic) ? 'Possible duplicate' : 'New';
+    if (cnicExists_(sheet, checked.cnic)) {
+      return json_({ ok: false, error: 'An application with this CNIC / B-Form number has already been submitted.' });
+    }
     step = 'folder';
     var folder = scholarshipFolder_();
     step = 'photo';
@@ -104,7 +106,7 @@ function doPost(e) {
     sheet.appendRow([
       Utilities.formatDate(new Date(), 'Asia/Karachi', 'yyyy-MM-dd HH:mm:ss'),
       checked.applicationId,
-      status,
+      'New',
       checked.name,
       checked.fatherName,
       checked.dob,
@@ -132,7 +134,7 @@ function doPost(e) {
       degreeUrl
     ]);
 
-    return json_({ ok: true, applicationId: checked.applicationId, status: status });
+    return json_({ ok: true, applicationId: checked.applicationId, status: 'New' });
   } catch (err) {
     return json_({ ok: false, error: saveError_(step, err) });
   } finally {
