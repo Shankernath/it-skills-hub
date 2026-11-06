@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholarship Application | IT Skills Hub Umerkot</title>
+    <title>Scholarship Program | IT Skills Hub Umerkot</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description"
-        content="Apply online for a scholarship at IT Skills Hub Umerkot for DIT, One Year Advance Course, or Office Automation.">
+        content="Scholarship applications are currently closed at IT Skills Hub Umerkot. Follow our Facebook page for future scholarship announcements.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
@@ -44,13 +44,13 @@
                         <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#location">Location</a></li>
                     </ul>
-                    <a href="#apply" class="btn btn-primary-custom ms-lg-3">Apply Now</a>
+                    <a href="scholarship.html" class="btn btn-primary-custom ms-lg-3">Scholarship</a>
                 </div>
             </div>
         </nav>
         <div class="announcement-banner">
             <div class="marquee-text">
-                Scholarships Open – Apply for DIT, One Year Advance Course, or Office Automation | Limited Seats
+                Scholarship Applications Are Now Closed – Follow Our Facebook Page for Future Announcements
             </div>
         </div>
     </div>
@@ -64,208 +64,51 @@
 
     <main class="scholarship-wrap">
         <div class="container" id="apply">
-            <form id="scholarshipForm" class="wizard-card" novalidate>
-                <div style="display:none;" aria-hidden="true">
-                    <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+            <div class="wizard-card text-center" style="padding: 3rem 2rem;">
+
+                <!-- Closed Icon -->
+                <div style="margin-bottom: 1.5rem;">
+                    <i class="fas fa-clock" style="font-size: 4rem; color: #e67e22;"></i>
                 </div>
 
-                <section class="form-step" data-step="1">
-                    <h2>Personal Information</h2>
-                    <p class="step-lead">Tell us who is applying and how we can reach the family.</p>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="field-label" for="name">Name of Applicant <span class="req">*</span></label>
-                            <input class="form-control" id="name" name="name" maxlength="60" autocomplete="name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field-label" for="fatherName">Father's Name <span class="req">*</span></label>
-                            <input class="form-control" id="fatherName" name="fatherName" maxlength="60" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="dob">Date of Birth <span class="req">*</span></label>
-                            <input class="form-control" id="dob" name="dob" type="date" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="cnic">CNIC / B-Form No. <span class="req">*</span></label>
-                            <input class="form-control" id="cnic" name="cnic" inputmode="numeric" placeholder="XXXXX-XXXXXXX-X" maxlength="15" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label d-block">Gender <span class="req">*</span></label>
-                            <div class="gender-choices">
-                                <label class="gender-choice"><input type="radio" name="gender" value="Male" required> Male</label>
-                                <label class="gender-choice"><input type="radio" name="gender" value="Female"> Female</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field-label" for="mobile">Mobile / WhatsApp Number <span class="req">*</span></label>
-                            <input class="form-control" id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="11" placeholder="03XXXXXXXXX" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field-label" for="email">Email Address</label>
-                            <input class="form-control" id="email" name="email" type="email" maxlength="80" placeholder="Optional">
-                        </div>
-                        <div class="col-12">
-                            <label class="field-label" for="address">Resident Address <span class="req">*</span></label>
-                            <textarea class="form-control" id="address" name="address" rows="2" maxlength="250" required></textarea>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field-label" for="taluka">Taluka <span class="req">*</span></label>
-                            <input class="form-control" id="taluka" name="taluka" list="talukaList" maxlength="40" required>
-                            <datalist id="talukaList">
-                                <option value="Umerkot"></option>
-                                <option value="Samaro"></option>
-                                <option value="Kunri"></option>
-                                <option value="Pithoro"></option>
-                            </datalist>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field-label" for="district">District <span class="req">*</span></label>
-                            <input class="form-control" id="district" name="district" list="districtList" maxlength="40" required>
-                            <datalist id="districtList">
-                                <option value="Umerkot"></option>
-                                <option value="Tharparkar"></option>
-                                <option value="Mirpurkhas"></option>
-                                <option value="Sanghar"></option>
-                            </datalist>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="fatherOccupation">Father's Occupation <span class="req">*</span></label>
-                            <input class="form-control" id="fatherOccupation" name="fatherOccupation" maxlength="60" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="fatherIncome">Father's Monthly Income (PKR) <span class="req">*</span></label>
-                            <input class="form-control" id="fatherIncome" name="fatherIncome" type="number" min="0" max="99999999" step="1" inputmode="numeric" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="fatherContact">Father's Contact No. <span class="req">*</span></label>
-                            <input class="form-control" id="fatherContact" name="fatherContact" type="tel" inputmode="numeric" maxlength="11" placeholder="03XXXXXXXXX" required>
-                        </div>
-                    </div>
-                </section>
+                <!-- Heading -->
+                <h2 style="color: #1a237e; margin-bottom: 1rem;">Scholarship Applications Are Closed</h2>
 
-                <section class="form-step" data-step="2">
-                    <h2>Academic Information</h2>
-                    <p class="step-lead">Share the last class or degree you completed.</p>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="field-label" for="qualification">Last Qualification <span class="req">*</span></label>
-                            <select class="form-select" id="qualification" name="qualification" required>
-                                <option value="" selected disabled>Select qualification</option>
-                                <option>Middle</option>
-                                <option>Matric / SSC</option>
-                                <option>Intermediate / HSSC</option>
-                                <option>Diploma / DAE</option>
-                                <option>Bachelor</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 d-none" id="otherQualificationWrap">
-                            <label class="field-label" for="qualificationOther">Please specify <span class="req">*</span></label>
-                            <input class="form-control" id="qualificationOther" name="qualificationOther" maxlength="60">
-                        </div>
-                        <div class="col-md-8">
-                            <label class="field-label" for="institute">School / College Name <span class="req">*</span></label>
-                            <input class="form-control" id="institute" name="institute" maxlength="80" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="passingYear">Passing Year <span class="req">*</span></label>
-                            <input class="form-control" id="passingYear" name="passingYear" type="number" min="1990" max="2026" inputmode="numeric" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="obtainedMarks">Obtained Marks <span class="req">*</span></label>
-                            <input class="form-control" id="obtainedMarks" name="obtainedMarks" type="number" min="0" max="10000" step="1" inputmode="numeric" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="field-label" for="totalMarks">Total Marks <span class="req">*</span></label>
-                            <input class="form-control" id="totalMarks" name="totalMarks" type="number" min="1" max="10000" step="1" inputmode="numeric" required>
-                        </div>
-                        <div class="col-md-4 d-flex align-items-end">
-                            <div id="percentagePreview" class="percentage-pill d-none"></div>
-                        </div>
-                    </div>
-                </section>
+                <!-- Message -->
+                <p style="font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto 1.5rem;">
+                    The deadline for the current scholarship round has passed. Thank you to everyone who applied!
+                </p>
 
-                <section class="form-step" data-step="3">
-                    <h2>Scholarship Course</h2>
-                    <p class="step-lead">Choose the one course you want the scholarship for.</p>
-                    <div class="choice-grid">
-                        <label class="choice-card">
-                            <input type="radio" name="courses" value="DIT" required>
-                            <strong>DIT</strong>
-                            <small>Diploma in Information Technology. One-year programme.</small>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="courses" value="One Year Advance Course">
-                            <strong>One Year Advance Course</strong>
-                            <small>Advanced one-year training beyond the basics.</small>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="courses" value="Office Automation">
-                            <strong>Office Automation</strong>
-                            <small>Practical office software and computer skills.</small>
-                        </label>
-                    </div>
-                </section>
+                <hr style="max-width: 100px; margin: 1.5rem auto; border-color: #e67e22;">
 
-                <section class="form-step" data-step="4">
-                    <h2>Documents</h2>
-                    <p class="step-lead">These three files are required. Upload JPG, PNG, or WEBP images only. Each photo is resized in your browser before it is sent.</p>
-                    <div class="upload-grid">
-                        <label class="upload-card">
-                            <i class="fas fa-camera"></i>
-                            <strong>Photograph <span class="req">*</span></strong>
-                            <small>Recent photo, JPG or PNG.</small>
-                            <em class="file-state">No file selected</em>
-                            <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required>
-                        </label>
-                        <label class="upload-card">
-                            <i class="fas fa-id-card"></i>
-                            <strong>CNIC / B-Form <span class="req">*</span></strong>
-                            <small>Clear photo of the card. JPG or PNG only.</small>
-                            <em class="file-state">No file selected</em>
-                            <input id="cnicFile" name="cnicFile" type="file" accept="image/jpeg,image/png,image/webp" required>
-                        </label>
-                        <label class="upload-card">
-                            <i class="fas fa-file-lines"></i>
-                            <strong>Last Degree / Certificate <span class="req">*</span></strong>
-                            <small>Photo of the mark sheet or certificate. JPG or PNG only.</small>
-                            <em class="file-state">No file selected</em>
-                            <input id="degreeFile" name="degreeFile" type="file" accept="image/jpeg,image/png,image/webp" required>
-                        </label>
-                    </div>
-                </section>
-
-                <section class="form-step" data-step="5">
-                    <h2>Consent</h2>
-                    <p class="step-lead">Read both statements, then submit your application.</p>
-
-                    <label class="consent-card mb-3">
-                        <input type="checkbox" id="consent" name="consent">
-                        <strong>Consent</strong>
-                        <p>I provide my CNIC/B-Form, photograph, academic records, and other required information/documents to I.T Skills Hub Umerkot for scholarship purposes. I have no objection to the collection and use of this information for Scholarship Application, Verification, Test, and related official purposes.</p>
-                    </label>
-                    <label class="consent-card mb-0">
-                        <input type="checkbox" id="undertaking" name="undertaking">
-                        <strong>Undertaking</strong>
-                        <p>I declare that all information and documents provided by me are true and correct. If any information is found to be false, incorrect, misleading, or fraudulent, I.T Skills Hub Umerkot has the right to reject my application or cancel my scholarship without any claim from me. I agree to abide by the institute's scholarship rules, test criteria, and final selection decision.</p>
-                    </label>
-                </section>
-
-                <div id="successPanel" class="success-panel d-none">
-                    <i class="fas fa-circle-check"></i>
-                    <h2 class="mt-3">Application submitted</h2>
-                    <div class="application-id" id="successId"></div>
-                    <p class="text-muted mb-4">Save this application number. The institute will contact you on WhatsApp after the documents are checked. For help, call 0349-0304228.</p>
-                    <a href="index.html" class="btn btn-primary-custom">Back to Home</a>
+                <!-- Future Announcement -->
+                <div style="background: #f0f4ff; border-radius: 12px; padding: 2rem; max-width: 650px; margin: 0 auto 2rem;">
+                    <i class="fas fa-bullhorn" style="font-size: 2rem; color: #1a237e; margin-bottom: 0.75rem;"></i>
+                    <h4 style="color: #1a237e; margin-bottom: 0.75rem;">Don't Miss Future Scholarships!</h4>
+                    <p style="color: #555; margin-bottom: 1.25rem;">
+                        We announce new scholarship opportunities on our <strong>Facebook page</strong>. Follow us to be the first to know when the next round opens.
+                    </p>
+                    <a href="https://www.facebook.com/p/IT-Skills-Hub-Umerkot-61566590547475/" target="_blank" rel="noopener"
+                       class="btn btn-primary-custom" style="font-size: 1.05rem; padding: 0.65rem 2rem;">
+                        <i class="fab fa-facebook-f me-2"></i>Follow Us on Facebook
+                    </a>
                 </div>
 
-                <div class="wizard-actions">
-                    <div id="formStatus" class="d-none" role="alert"></div>
-                    <button type="submit" class="btn btn-primary-custom ms-auto" id="submitBtn">
-                        <i class="fas fa-paper-plane me-2"></i>Submit Application
-                    </button>
-                </div>
-            </form>
+                <!-- Contact Info -->
+                <p style="color: #888; font-size: 0.95rem;">
+                    Have questions? Contact us at
+                    <a href="tel:03490304228" style="color: #1a237e; font-weight: 600;">0349-0304228</a> or
+                    <a href="https://wa.me/923490304228" target="_blank" rel="noopener" style="color: #25d366; font-weight: 600;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </p>
+
+                <!-- Back to Home -->
+                <a href="index.html" class="btn btn-outline-secondary mt-3">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Home
+                </a>
+
+            </div>
         </div>
     </main>
 
@@ -343,7 +186,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/scholarship.js"></script>
 </body>
 
 </html>
